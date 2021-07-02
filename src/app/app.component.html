@@ -1,1 +1,13 @@
-<my-employee></my-employee>
+<!--Add one or more classes-->
+<button class="colorClass" [class]="classesToApply">My Button </button>
+
+<br/><br/>
+
+<!--Add or remove a single CSS class -->
+<button class="colorClass boldClass italicsClass" [class.boldClass]="applyBoldClass" [class.italicsClass]= false>My Button </button>
+
+
+<br/><br/>
+
+<!--Add or remove multiple CSS classes -->
+<button [ngClass]="addClasses()">My Button </button>
