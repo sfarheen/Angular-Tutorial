@@ -1,7 +1,4 @@
-<!-- Syntax for event binding
-<button on-click='onClick()'>Click Me</button>
-<button (click)='onClick()'>Click Me</button>
--->
-
-
-<my-employee></my-employee>
+<!--Import FormsModule in app.module.ts to use ngModel directive -->
+Name: <input [(ngModel)]='name' />
+<br/>
+You entered: {{name}}
