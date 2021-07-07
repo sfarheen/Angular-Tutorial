@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { IEmployee } from "./employee";
 
 @Component({
   selector: "list-employee",
@@ -6,7 +7,7 @@ import { Component } from "@angular/core";
   styleUrls: ["./employeeList.component.css"]
 })
 export class EmployeeListComponent {
-  employees: any[];
+  employees: IEmployee[];
 
   selectedEmployeeCountRadioButton: string = "All";
 
@@ -57,7 +58,7 @@ export class EmployeeListComponent {
     ];
   }
 
-  onEmployeeCountRadioButtonChange(selectedRadioButtonValue: string):void{
+  onEmployeeCountRadioButtonChange(selectedRadioButtonValue: string): void {
     this.selectedEmployeeCountRadioButton = selectedRadioButtonValue;
   }
 
