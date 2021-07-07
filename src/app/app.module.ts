@@ -7,13 +7,16 @@ import { EmployeeComponent } from "./employee.component";
 import { EmployeeListComponent } from "./employeeList.component";
 import { EmployeeCountComponent } from "./employeeCount.component";
 
+import { SimpleComponent } from "./Others/simple.component";
+
 @NgModule({
   imports: [BrowserModule, FormsModule],
   declarations: [
     AppComponent,
     EmployeeComponent,
     EmployeeListComponent,
-    EmployeeCountComponent
+    EmployeeCountComponent,
+    SimpleComponent
   ],
   bootstrap: [AppComponent]
 })
