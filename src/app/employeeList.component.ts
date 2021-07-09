@@ -10,13 +10,14 @@ import { EmployeeService } from "./employee.service";
 })
 export class EmployeeListComponent implements OnInit {
   employees: IEmployee[];
-
+  str: String = "Tom";
   selectedEmployeeCountRadioButton: string = "All";
 
   constructor(private _employeeService: EmployeeService) {}
 
   ngOnInit() {
     this.employees = this._employeeService.getEmployees();
+    this.str = this._employeeService.getString().subscribe();
   }
 
   onEmployeeCountRadioButtonChange(selectedRadioButtonValue: string): void {

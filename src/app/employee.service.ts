@@ -1,8 +1,17 @@
 import { Injectable } from "@angular/core";
 import { IEmployee } from "./employee";
+import { HttpClient } from "@angular/common/http";
+import { Observable } from "rxjs/Observable";
+import { map } from "rxjs/operators";
 
 @Injectable()
 export class EmployeeService {
+  constructor(private _http: HttpClient) {}
+
+  getString(): Observable<string> {
+    return this._http.get("http://localhost:52350/api/employees");
+  }
+
   getEmployees(): IEmployee[] {
     return [
       {
