@@ -1,14 +1,15 @@
 import { Injectable } from "@angular/core";
 import { IEmployee } from "./employee";
 import { HttpClient } from "@angular/common/http";
-import { Observable } from "rxjs/Observable";
+import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
+import { catchError } from "rxjs/operators";
 
 @Injectable()
 export class EmployeeService {
   constructor(private _http: HttpClient) {}
 
-  getString(): Observable<string> {
+  getString(): Observable<Object> {
     return this._http.get("http://localhost:52350/api/employees");
   }
 
