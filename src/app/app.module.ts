@@ -14,9 +14,13 @@ import { SimpleComponent } from "./Others/simple.component";
 import { HomeComponent } from "./home/home.component";
 import { PageNotFoundComponent } from "./Others/pageNotFound.component";
 
+import { EmployeeService } from "./employee/employee.service";
+import { UserPreferencesService } from "./employee/userPreferences.service";
+
 const appRoutes: Routes = [
   { path: "home", component: HomeComponent },
   { path: "employees", component: EmployeeListComponent },
+  { path: "employees/:code", component: EmployeeComponent },
   { path: "", redirectTo: "/home", pathMatch: "full" },
   { path: "**", component: PageNotFoundComponent }
 ];
@@ -37,6 +41,7 @@ const appRoutes: Routes = [
     HomeComponent,
     PageNotFoundComponent
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers: [EmployeeService, UserPreferencesService]
 })
 export class AppModule {}

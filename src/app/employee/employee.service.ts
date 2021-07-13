@@ -7,14 +7,10 @@ import { catchError } from "rxjs/operators";
 
 @Injectable()
 export class EmployeeService {
-  constructor(private _http: HttpClient) {}
+  employeeList: IEmployee[];
 
-  getString(): Observable<Object> {
-    return this._http.get("http://localhost:52350/api/employees");
-  }
-
-  getEmployees(): IEmployee[] {
-    return [
+  constructor(private _http: HttpClient) {
+    this.employeeList = [
       {
         code: "emp101",
         name: "Tom",
@@ -58,5 +54,17 @@ export class EmployeeService {
         dateOfBirth: "11/11/1979"
       }
     ];
+  }
+
+  getString(): Observable<Object> {
+    return this._http.get("http://localhost:52350/api/employees");
+  }
+
+  getEmployees(): IEmployee[] {
+    return this.employeeList;
+  }
+
+  getEmployeesByCode(empCode: string): IEmployee {
+    return this.employeeList.filter((e) => e.code === "empCode")[0];
   }
 }
